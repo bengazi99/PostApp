@@ -1,0 +1,18 @@
+<br>
+<div class="row justify-content-end">
+    <div class="col-md-5">
+        <input (keyup)="searchName()" class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Search by user name">
+    </div>
+</div>
+<br>
+<div class="list-group" *ngFor="let post of posts">
+    <a routerLink="/post/{{post.id}}" class="list-group-item list-group-item-action" aria-current="true" target="_blank" rel="noopener noreferrer">
+        <div class="card-body">
+            <h4 class="card-title">{{ post.title | uppercase}}</h4>
+            <br>
+            <small> <strong>Name: </strong> {{ post.name }}</small>
+            <p>{{ post.body }}</p>
+        </div>
+    </a>
+    <br>
+</div>
