@@ -17,7 +17,7 @@ export class PostsService {
     private http: HttpClient,
   ) { }
 
-  getPost(id: number): Observable<PostModel> {
+  getPost(id: string | null): Observable<PostModel> {
     return this.http.get<PostModel>(`${this.postsUrl}/${id}`)
   }
 
